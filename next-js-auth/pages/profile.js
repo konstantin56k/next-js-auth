@@ -11,14 +11,14 @@ export async function getServerSideProps(context) {
 
   console.log(session);
 
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: "/auth",
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: { session },
