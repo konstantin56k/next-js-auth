@@ -32,7 +32,8 @@ async function handler(req, res) {
   }
 
   const currentPassword = user.password;
-  const verifiedPassword = verifyPassword(oldPassword, currentPassword);
+  const verifiedPassword = await verifyPassword(oldPassword, currentPassword);
+  console.log(verifiedPassword);
 
   if (!verifiedPassword) {
     res.status(403).json({ message: "Invalid password" });

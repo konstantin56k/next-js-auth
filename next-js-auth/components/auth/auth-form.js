@@ -51,6 +51,8 @@ function AuthForm() {
       if (!result.error) {
         // set some auth state
         router.replace("/profile");
+      } else {
+        console.log("--> Invalid password");
       }
     } else {
       try {
